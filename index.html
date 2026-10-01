@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e1717" />
+  <title>Clave Clara | Contraseñas más seguras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Clave Clara, inicio">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Clave Clara</span>
+    </a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>Tu seguridad, en tus manos</p>
+        <h1>Contraseñas fuertes,<br /><em>sin complicarte.</em></h1>
+        <p class="hero-lede">Crea una clave única desde una palabra que recuerdes o comprueba la resistencia de la que ya tienes.</p>
+        <div class="hero-meta"><span class="meta-line"></span><span>Genera · Comprueba · Protege</span></div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit-ring ring-one"></div>
+        <div class="orbit-ring ring-two"></div>
+        <div class="orbit-core"><span>✓</span></div>
+        <span class="orbit-label label-top">12+</span>
+        <span class="orbit-label label-right">única</span>
+        <span class="orbit-label label-bottom">local</span>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Herramientas de seguridad">
+      <article class="tool-panel generator-panel" id="generador">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">01 / Generador</p>
+            <h2>Una palabra.<br /><span>Tres posibilidades.</span></h2>
+          </div>
+          <span class="panel-icon" aria-hidden="true">↗</span>
+        </div>
+        <p class="panel-description">Partimos de una palabra que puedas recordar y la convertimos en tres claves diferentes con mayúsculas, números y símbolos.</p>
+        <form id="generator-form" class="generator-form">
+          <label for="source-word">Escribe una palabra</label>
+          <div class="input-action-row">
+            <input id="source-word" name="source-word" type="text" autocomplete="off" placeholder="ej. montaña" maxlength="40" required />
+            <button class="primary-button" type="submit"><span>Generar</span><span aria-hidden="true">✦</span></button>
+          </div>
+          <p class="field-hint">No uses nombres, fechas ni datos que te identifiquen.</p>
+        </form>
+        <div id="generated-list" class="generated-list" aria-live="polite">
+          <div class="empty-state"><span>✦</span><p>Tu trío de claves aparecerá aquí.</p></div>
+        </div>
+      </article>
+
+      <article class="tool-panel checker-panel" id="verificador">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">02 / Verificador</p>
+            <h2>¿Qué tan fuerte<br /><span>es tu clave?</span></h2>
+          </div>
+          <div id="strength-badge" class="strength-badge" data-level="empty">—</div>
+        </div>
+        <p class="panel-description">Escríbela y observa cómo cada capa de seguridad se activa al instante. Nada sale de este navegador.</p>
+        <div class="checker-input-wrap">
+          <label for="password-input">Tu contraseña</label>
+          <div class="password-input-row">
+            <input id="password-input" type="password" autocomplete="new-password" placeholder="Empieza a escribir..." />
+            <button id="toggle-password" class="icon-button" type="button" aria-label="Mostrar contraseña" title="Mostrar contraseña">◉</button>
+          </div>
+        </div>
+        <div class="strength-meter" aria-hidden="true"><span id="strength-meter-fill"></span></div>
+        <ul id="criteria-list" class="criteria-list" aria-live="polite">
+          <li data-criterion="length"><span class="criterion-icon">○</span><span><strong>Longitud</strong><small>12 caracteres o más</small></span><b>—</b></li>
+          <li data-criterion="uppercase"><span class="criterion-icon">○</span><span><strong>Mayúsculas</strong><small>Incluye letras de A a Z</small></span><b>—</b></li>
+          <li data-criterion="lowercase"><span class="criterion-icon">○</span><span><strong>Minúsculas</strong><small>Incluye letras de a a z</small></span><b>—</b></li>
+          <li data-criterion="number"><span class="criterion-icon">○</span><span><strong>Números</strong><small>Incluye al menos un 0 a 9</small></span><b>—</b></li>
+          <li data-criterion="symbol"><span class="criterion-icon">○</span><span><strong>Símbolos</strong><small>Usa !, @, #, $, %, etc.</small></span><b>—</b></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer"><span>CLAVE CLARA</span><span>La seguridad empieza con una buena decisión.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
